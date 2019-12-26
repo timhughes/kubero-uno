@@ -1,2 +1,3 @@
 ---
 pod_network_cidr: 10.10.0.0/16
+untaint_masters: false

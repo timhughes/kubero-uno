@@ -4,7 +4,6 @@
 
 node_configs = [
   {role: 'master', qty: 1 },
-  {role: 'worker', qty: 3},
 ]
 
 # Max instances per role. Used for spacing ip addresses
@@ -20,8 +19,8 @@ Vagrant.configure("2") do |config|
     nfs_udp: false
 
   config.vm.provider :libvirt do |libvirt|
-    libvirt.cpus = 2
-    libvirt.memory = 4096
+    libvirt.cpus = 6
+    libvirt.memory = 8096
     libvirt.nested = true
     libvirt.graphics_type = 'spice'
     libvirt.video_type = 'virtio'

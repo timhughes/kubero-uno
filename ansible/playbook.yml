@@ -7,9 +7,8 @@
     - kube_node
 - hosts: master
   become: true
+  vars:
+    untaint_masters: true
   roles:
     - master
-- hosts: worker
-  become: true
-  roles:
     - worker

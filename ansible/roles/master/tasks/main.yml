@@ -44,6 +44,13 @@
   when:
     - not calico_kubeconfig.stat.exists
 
+- name: Remove master taint
+  become: false
+  command: kubectl taint nodes --all node-role.kubernetes.io/master-
+  ignore_errors: yes
+  when:
+    - untaint_masters
+
 - name: Generate join command
   command: kubeadm token create --print-join-command
   become: false
